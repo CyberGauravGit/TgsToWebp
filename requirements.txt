@@ -1,4 +1,6 @@
-numpy
 Flask==2.3.3
-lottie==0.7.4
+lottie==0.7.2
 Pillow==10.0.1
+gunicorn==21.2.0
+
+
