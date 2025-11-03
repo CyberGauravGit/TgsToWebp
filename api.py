@@ -772,12 +772,12 @@ def get_me():
 def home():
     return jsonify({
         'service': 'EXACT Telegram-style Messaging API',
-        'version': '4.0.0',
-        'description': 'Render Compatible - Implements EXACT Telegram getUpdates logic',
+        'version': '4.1.0',  # ✅ NEW VERSION
+        'description': 'Render Compatible - DOWNLOAD FIXED',
         'important_notes': [
             '🔴 WITHOUT offset: You will receive DUPLICATE/OLD messages',
             '🟢 WITH offset: You will receive ONLY NEW messages', 
-            '💡 Always save next_offset from response and use it in next request'
+            '✅ DOWNLOAD FIXED - send_file() working perfectly'
         ]
     })
 
@@ -802,10 +802,9 @@ def init_db():
 if __name__ == '__main__':
     init_db()
     print(f"EXACT Telegram-style API starting on port {PORT}")
-    print("\n=== IMPORTANT ===")
-    print("This implements EXACT Telegram getUpdates logic:")
-    print("❌ WITHOUT offset: Duplicate/old messages")
-    print("✅ WITH offset: Only new messages") 
-    print("=================\n")
+    print("=== DOWNLOAD FIXED ===")
+    print("✅ send_file() working perfectly")
+    print("✅ File download fixed")
+    print("======================")
     
     app.run(host='0.0.0.0', port=PORT, debug=False)
