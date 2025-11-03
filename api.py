@@ -699,21 +699,8 @@ def download_file(file_id):
         message.read_count += 1
         db.session.commit()
         
-        # ✅ FIXED: Compatible send_file for all Flask versions
-        try:
-            # Try new parameter first (Flask 2.0+)
-            return send_file(
-                message.file_path,
-                as_attachment=True,
-                download_name=message.original_name
-            )
-        except TypeError:
-            # Fallback for older Flask versions
-            return send_file(
-                message.file_path,
-                as_attachment=True,
-                attachment_filename=message.original_name
-            )
+        # ✅ FIXED: Simple send_file without problematic parameters
+        return send_file(message.file_path)
         
     except Exception as e:
         return jsonify({
