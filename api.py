@@ -699,7 +699,7 @@ def download_file(file_id):
         message.read_count += 1
         db.session.commit()
         
-        # ✅ FIXED: Simple send_file without problematic parameters
+        # ✅ FIXED: Simple send_file without any parameters
         return send_file(message.file_path)
         
     except Exception as e:
